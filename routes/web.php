@@ -39,6 +39,17 @@ Route::any('/contact', function(){
 });
 
 
+// // parameter routing
+Route::any('/contact/{serial}', function($serial){
+    return "I need you $serial serial number";
+});
+
+// // named routing
+Route::get('/new', function(){
+    return "Allah is our creator";
+})->name('mycreator');
+
+
 
 
 

@@ -128,6 +128,7 @@
                 </div>
                 <!-- test class start -->
                 <ul class="link">
+                    <li class="Our-Creator"><a href="{{ route('mycreator')}}">Our Creator</a></li>
                     <li class="link-item"><a href="{{ url('/nayem'); }}">Nayem</a></li>
                     <li class="link-item"><a href="{{ URL::to('/hossain'); }}">Hossain</a></li>
                     <li class="link-item"><a href="{{ url('/ishan') }}">Ishan</a></li>
