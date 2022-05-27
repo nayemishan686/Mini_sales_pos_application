@@ -126,6 +126,14 @@
                         Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
                     </div>
                 </div>
+                <!-- test class start -->
+                <ul class="link">
+                    <li class="link-item"><a href="{{ url('/nayem'); }}">Nayem</a></li>
+                    <li class="link-item"><a href="{{ URL::to('/hossain'); }}">Hossain</a></li>
+                    <li class="link-item"><a href="{{ url('/ishan') }}">Ishan</a></li>
+                    <li class="link-item"><a href="{{ url('/contact') }}">Contact</a></li>
+                </ul>
+                <!-- test class end -->
             </div>
         </div>
     </body>

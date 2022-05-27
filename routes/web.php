@@ -17,6 +17,40 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+// // One Way to define route
+Route::get('/nayem',function(){
+        return view('nayem');
+    });
+ 
+    
+// Another Way to define route
+Route::view('/hossain','hossain');
+
+
+// // Another Way to define route
+Route::match(['get','post'], '/ishan', function(){
+    return view('ishan');
+});
+
+// // Another Way to define route
+Route::any('/contact', function(){
+    return view('contact');
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Ignore it
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
