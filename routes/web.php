@@ -34,9 +34,9 @@ Route::match(['get','post'], '/ishan', function(){
 });
 
 // // Another Way to define route
-Route::any('/contact', function(){
-    return view('contact');
-});
+// Route::any('/contact', function(){
+//     return view('contact');
+// });
 
 
 // // parameter routing
@@ -49,6 +49,11 @@ Route::get('/new', function(){
     return "Allah is our creator";
 })->name('mycreator');
 
+
+//route using middleware
+Route::get('/contact',function(){
+    return view('contact');
+})->middleware('contact');
 
 
 
