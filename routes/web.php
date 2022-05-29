@@ -25,6 +25,8 @@ Route::get('/hossain', [testcontroller::class, 'hossain']);
 Route::get('/ishan', [testcontroller::class, 'ishan']);
 //named routing
 Route::get('/creator', [testcontroller::class, 'creator'])->name('mycreator');
+//contact page routing
+Route::get('/contact',[testcontroller::class, 'contact'])->middleware('contact');
 
 
 
@@ -76,10 +78,10 @@ Route::get('/creator', [testcontroller::class, 'creator'])->name('mycreator');
 // })->name('mycreator');
 
 
-//route using middleware
-Route::get('/contact',function(){
-    return view('contact');
-})->middleware('contact');
+// //route using middleware
+// Route::get('/contact',function(){
+//     return view('contact');
+// })->middleware('contact');
 
 
 

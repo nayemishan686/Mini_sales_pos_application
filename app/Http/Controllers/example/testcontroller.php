@@ -26,4 +26,8 @@ class testcontroller extends Controller
     public function creator(){
         return view('ourcreator');
     }
+
+    public function contact(){
+        return view('contact');
+    }
 }
