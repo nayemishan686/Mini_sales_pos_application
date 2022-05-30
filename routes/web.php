@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\example\testcontroller;
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,6 +28,8 @@ Route::get('/ishan', [testcontroller::class, 'ishan']);
 Route::get('/creator', [testcontroller::class, 'creator'])->name('mycreator');
 //contact page routing
 Route::get('/contact',[testcontroller::class, 'contact'])->middleware('contact');
+//NayemForm
+Route::get('/submit-form',[testcontroller::class, 'NayemForm'])->name('NayemForm');
 
 
 

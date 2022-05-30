@@ -30,4 +30,8 @@ class testcontroller extends Controller
     public function contact(){
         return view('contact');
     }
+
+    public function NayemForm(Request $request){
+        dd($request->collect());
+    }
 }
