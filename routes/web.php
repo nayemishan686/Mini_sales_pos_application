@@ -32,6 +32,18 @@ Route::get('/contact',[testcontroller::class, 'contact'])->middleware('contact')
 Route::get('/submit-form',[testcontroller::class, 'NayemForm'])->name('NayemForm');
 //Laravel
 Route::get('laravel',[testcontroller::class, 'laravel'])->name('laravel');
+//session test
+Route::get('test', function(Request $request){
+    session(['name' => 'Nayem']);
+    session(['age' => '14']);
+    $request->session()->put('phone', '016');
+});
+
+//to see all session
+Route::get('all', function(Request $request){
+    return $request->session()->all();
+    $request->session()->flush('status', 'Task was successful!');
+});
 
 
 
