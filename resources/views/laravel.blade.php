@@ -1,4 +1,6 @@
 <h1>Welceme {{ $name }} laravel world.</h1>
+
+{{-- Blade --}}
 {{
     $records = 1;
 }}
@@ -9,3 +11,12 @@
 @else
     I don't have any records!
 @endif
+
+<br>
+
+{{-- Url --}}
+{{ url()->current(); }}
+<br>
+{{ url()->previous(); }}
+<br>
+{{ url()->full(); }}
