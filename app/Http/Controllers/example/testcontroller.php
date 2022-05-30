@@ -38,7 +38,7 @@ class testcontroller extends Controller {
     //how to define view
     public function laravel() {
         //return view('laravel');
-        if (view::exists('laravels')) {
+        if (view::exists('laravel')) {
             return View::make('laravel', ['name' => 'Nayem Ishan']);
         } else {
             return "Your route is not available";
