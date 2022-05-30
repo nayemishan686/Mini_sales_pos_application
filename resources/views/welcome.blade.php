@@ -133,6 +133,7 @@
                     <li class="link-item"><a href="{{ URL::to('/hossain'); }}">Hossain</a></li>
                     <li class="link-item"><a href="{{ url('/ishan') }}">Ishan</a></li>
                     <li class="link-item"><a href="{{ url('/contact') }}">Contact</a></li>
+                    <li class="link-item"><a href="{{ route('laravel') }}">Laravel</a></li>
                 </ul>
                 <!-- test class end -->
             </div>

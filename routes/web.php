@@ -30,6 +30,8 @@ Route::get('/creator', [testcontroller::class, 'creator'])->name('mycreator');
 Route::get('/contact',[testcontroller::class, 'contact'])->middleware('contact');
 //NayemForm
 Route::get('/submit-form',[testcontroller::class, 'NayemForm'])->name('NayemForm');
+//Laravel
+Route::get('laravel',[testcontroller::class, 'laravel'])->name('laravel');
 
 
 
