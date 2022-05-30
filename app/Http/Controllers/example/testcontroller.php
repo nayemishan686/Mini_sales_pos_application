@@ -32,6 +32,6 @@ class testcontroller extends Controller
     }
 
     public function NayemForm(Request $request){
-        dd($request->collect());
+        return redirect('/');
     }
 }

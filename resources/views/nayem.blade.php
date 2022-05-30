@@ -2,7 +2,7 @@
 <a href="{{ url('/') }}">Back Home</a>
 <br>
 <br>
-<form action="{{ route('NayemForm'); }}" method="get">
+<form action="{{ route('NayemForm') }}" method="get">
     @csrf
     <input type="text" placeholder="Enter Your Name" name="name">
     <br>
@@ -10,5 +10,5 @@
     <br>
     <input type="number" name="number" placeholder="Enter Your Number" id="">
     <br>
-    <input type="submit" value="Submit">
+    <button type="submit">Submit</button>
 </form>
