@@ -28,10 +28,10 @@ Route::get('/ishan', [testcontroller::class, 'ishan']);
 Route::get('/creator', [testcontroller::class, 'creator'])->name('mycreator');
 //contact page routing
 Route::get('/contact',[testcontroller::class, 'contact'])->middleware('contact');
-//NayemForm
-Route::get('/submit-form',[testcontroller::class, 'NayemForm'])->name('NayemForm');
 //Laravel
 Route::get('laravel',[testcontroller::class, 'laravel'])->name('laravel');
+//myForm validation
+Route::post('/submit-form',[testcontroller::class, 'myForm'])->name('myForm');
 //session test
 Route::get('test', function(Request $request){
     session(['name' => 'Nayem']);

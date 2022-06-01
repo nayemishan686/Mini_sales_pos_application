@@ -44,4 +44,14 @@ class testcontroller extends Controller {
             return "Your route is not available";
         }
     }
+
+    //myForm validation
+    public function myForm(Request $request){
+        $validate = $request->validate([
+            'name' => 'required|max:30|min:6',
+            'email' => 'required|max:80',
+            'password' =>'required|min:4'
+        ]);
+        dd($request->all());
+    }
 }
