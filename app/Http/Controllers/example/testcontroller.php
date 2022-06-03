@@ -9,11 +9,13 @@ use Illuminate\Support\Facades\Log;
 
 class testcontroller extends Controller {
     public function index() {
+        // dd(app());
         return view('welcome');
     }
 
     public function nayem() {
-        return view('nayem');
+        app()->make('First_service_container');
+        // return view('nayem');
     }
 
     public function hossain() {
@@ -59,7 +61,7 @@ class testcontroller extends Controller {
         $logfile = file(storage_path().'/logs/contact.log');
         $collection = [];
         foreach($logfile as $line_number => $line){
-            $collection = array('Line' => $line_number, 'Content' => htmlspecialchars($line));
+            $collection[] = array('Line' => $line_number, 'Content' => htmlspecialchars($line));
         }
         dd($collection);
     }
