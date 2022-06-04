@@ -6,11 +6,20 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Cache;
+
 
 class testcontroller extends Controller {
     public function index() {
         // dd(app());
         return view('welcome');
+
+        // cache()->put('name','Nayem');
+        // dd(cache()->get('name'));
+
+        // Cache::put('name','Nayem Hossain');
+        // dd(Cache::get('name'));
+
     }
 
     public function nayem() {

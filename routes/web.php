@@ -45,6 +45,11 @@ Route::get('all', function(Request $request){
     $request->session()->flush('status', 'Task was successful!');
 });
 
+//custom facade test
+Route::get('/facade',function(){
+    dd(Nayem::mul(10,20));
+});
+
 
 
 
