@@ -41,4 +41,7 @@ Route::get('/deposite',[App\Http\Controllers\HomeController::class, 'deposite'])
 //about details
 Route::get('/details/{id}', [App\Http\Controllers\HomeController::class, 'details'])->name('about.mine');
 
+//store pass in hashing
+Route::post('/store/pass',[App\Http\Controllers\HomeController::class, 'store'])->name('store.pass');
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

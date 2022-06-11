@@ -17,6 +17,17 @@
                     {{ __('You are logged in!') }}
                     <br>
                     <a href="{{route('about.mine',Crypt::encryptString('7'))}}">About id</a>
+                    <br>
+                    <form action="{{route('store.pass')}}" method="POST">
+                        @csrf
+                        <div>
+                            <label for="password">Password :</label>
+                            <input type="password" name="password" id="password">
+                        </div>
+                        <div>
+                            <input type="submit" value="Submit" name="submit">
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
