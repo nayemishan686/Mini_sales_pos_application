@@ -25,4 +25,14 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    //deposite perpose
+    public function deposite(){
+        return view('deposite');
+    }
+
+    //verification resend
+    public function resend(){
+
+    }
 }
