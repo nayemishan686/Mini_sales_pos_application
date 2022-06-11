@@ -15,6 +15,8 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+                    <br>
+                    <a href="{{route('about.mine',Crypt::encryptString('7'))}}">About id</a>
                 </div>
             </div>
         </div>

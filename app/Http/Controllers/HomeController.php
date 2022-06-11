@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 
 class HomeController extends Controller
 {
@@ -34,5 +35,11 @@ class HomeController extends Controller
     //verification resend
     public function resend(){
 
+    }
+
+    //about id details
+    public function details($id){
+        $newId = Crypt::decryptString($id);
+        echo $newId;
     }
 }

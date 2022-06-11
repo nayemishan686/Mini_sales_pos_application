@@ -38,4 +38,7 @@ Route::post('verify/email',[App\Http\Controllers\HomeController::class, 'resend'
 //Deposite route
 Route::get('/deposite',[App\Http\Controllers\HomeController::class, 'deposite'])->name('deposite')->middleware('verified');
 
+//about details
+Route::get('/details/{id}', [App\Http\Controllers\HomeController::class, 'details'])->name('about.mine');
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
