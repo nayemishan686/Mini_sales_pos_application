@@ -13,7 +13,7 @@
                   <br>
                   <br>
                   <a href="{{route('index.class')}}" class="btn btn-primary">Class</a>
-                  <a href="" class="btn btn-dark">Students</a>
+                  <a href="{{route('students.index')}}" class="btn btn-dark">Students</a>
                     
                 </div>
             </div>

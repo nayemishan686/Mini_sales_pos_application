@@ -1,8 +1,9 @@
 <?php
 
+use App\Http\Controllers\admin\StudentController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,6 +26,8 @@ Route::post('store/class',[App\Http\Controllers\admin\ClassController::class, 's
 Route::get('delete/class/{id}',[App\Http\Controllers\admin\ClassController::class, 'delete'])->name('delete.class');
 
 
+// ___STUDENTS CRUD PROJECT BY RESOURCE CONTROLLER___
+Route::resource('students',StudentController::class);
 
 
 
