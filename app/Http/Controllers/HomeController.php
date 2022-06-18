@@ -28,25 +28,4 @@ class HomeController extends Controller
         return view('home');
     }
 
-    //deposite perpose
-    public function deposite(){
-        return view('deposite');
-    }
-
-    //verification resend
-    public function resend(){
-
-    }
-
-    //about id details
-    public function details($id){
-        $newId = Crypt::decryptString($id);
-        echo $newId;
-    }
-
-    //store pass
-    public function store(Request $request){
-        $pass = Hash::make($request->password);
-        echo $pass;
-    }
 }

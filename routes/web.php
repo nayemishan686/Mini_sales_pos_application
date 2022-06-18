@@ -18,6 +18,25 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// ___CLASS CRUD PROJECT IN NORMAL WAY___
+Route::get('class',[App\Http\Controllers\admin\ClassController::class, 'index'])->name('index.class');
+Route::get('create/class', [\App\Http\Controllers\admin\ClassController::class, 'create'])->name('create.class');
+Route::post('store/class',[App\Http\Controllers\admin\ClassController::class, 'store'])->name('store.class');
+Route::get('delete/class/{id}',[App\Http\Controllers\admin\ClassController::class, 'delete'])->name('delete.class');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Auth::routes();
 
 //to verify email
@@ -35,13 +54,6 @@ Route::get('/email/verify', function () {
 //to send verification resend
 Route::post('verify/email',[App\Http\Controllers\HomeController::class, 'resend'])->name('verification.resend');
 
-//Deposite route
-Route::get('/deposite',[App\Http\Controllers\HomeController::class, 'deposite'])->name('deposite')->middleware('verified');
 
-//about details
-Route::get('/details/{id}', [App\Http\Controllers\HomeController::class, 'details'])->name('about.mine');
-
-//store pass in hashing
-Route::post('/store/pass',[App\Http\Controllers\HomeController::class, 'store'])->name('store.pass');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
