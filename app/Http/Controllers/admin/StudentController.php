@@ -32,7 +32,8 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        $class = DB::table('class')->get();
+        return view('admin.students.create',compact('class'));
     }
 
     /**
@@ -43,7 +44,24 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|min:4',
+            'roll' => 'required',
+            'className' => 'required',
+            'phone' => 'required|min:11',
+            'mail' => 'required',
+        ]);
+
+        $students = [
+            'name' => $request->name,
+            'roll' => $request->roll,
+            'Class_id' => $request->className,
+            'email' => $request->mail,
+            'phone' => $request->phone,
+        ];
+
+        DB::table('students')->insert($students);
+        return redirect()->back()->with('success','Student Added Successfully');
     }
 
     /**
