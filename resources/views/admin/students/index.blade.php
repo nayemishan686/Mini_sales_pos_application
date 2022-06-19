@@ -10,6 +10,9 @@
                     </div>
 
                     <div class="card-body">
+                        @if (session()->has('success'))
+                            <strong class="text-success">{{ session()->get('success') }}</strong>
+                        @endif
                         <table class="table table-striped table-responsive">
                             <thead>
                                 <tr>
@@ -33,7 +36,12 @@
                                         <td>{{ $sData->email }}</td>
                                         <td>
                                             <a href="" class="btn btn-success">Edit</a>
-                                            <a href="{{route('delete.class',$cData->id)}}" class="btn btn-danger">Delete</a>
+                                            {{-- <a href="{{route('delete.class',$cData->id)}}" class="btn btn-danger">Delete</a> --}}
+                                            <form action="{{route('students.destroy',$sData->id)}}" method="POST">
+                                                @csrf
+                                                <input type="hidden" name="_method" value="DELETE">
+                                                <input type="submit" value="Delete" class="btn btn-danger">
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach
