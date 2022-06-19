@@ -24,7 +24,8 @@
                                         <td>{{ ++$key }}</td>
                                         <td>{{ $cData->class_name }}</td>
                                         <td>
-                                            <a href="" class="btn btn-success">Edit</a>
+                                            <a href="{{route('show.class',$cData->id)}}" class="btn btn-success">Show</a>
+                                            <a href="{{route('edit.class',$cData->id)}}" class="btn btn-success">Edit</a>
                                             <a href="{{route('delete.class',$cData->id)}}" class="btn btn-danger">Delete</a>
                                         </td>
                                     </tr>

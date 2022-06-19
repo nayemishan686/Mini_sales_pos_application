@@ -44,4 +44,29 @@ class ClassController extends Controller
         DB::table('class')->where('id',$id)->delete();
         return redirect()->back()->with('success','Successfully Deleted');
     }
+
+    //edit class
+    public function edit($id){
+        $sData = DB::table('class')->where('id',$id)->first();
+        return view('admin.class.edit',compact('sData'));
+    }
+
+    //update class
+    public function update(Request $request, $id){
+        $request->validate([
+            'className' => 'required|unique:class,class_name',
+        ]);
+
+        $data = array(
+            'class_name' => $request->className,
+        );
+
+        DB::table('class')->where('id',$id)->update($data);
+        return redirect()->back()->with('success','Succesfully Updated');
+    }
+    
+    public function show($id){
+        $cData = DB::table('class')->where('id',$id)->first();
+        return response()->json($cData);
+    }
 }

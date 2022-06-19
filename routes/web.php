@@ -24,6 +24,9 @@ Route::get('class',[App\Http\Controllers\admin\ClassController::class, 'index'])
 Route::get('create/class', [\App\Http\Controllers\admin\ClassController::class, 'create'])->name('create.class');
 Route::post('store/class',[App\Http\Controllers\admin\ClassController::class, 'store'])->name('store.class');
 Route::get('delete/class/{id}',[App\Http\Controllers\admin\ClassController::class, 'delete'])->name('delete.class');
+Route::get('edit/class/{id}',[\App\Http\Controllers\admin\ClassController::class, 'edit'])->name('edit.class');
+Route::post('update/class/{id}',[\App\Http\Controllers\admin\ClassController::class, 'update'])->name('update.class');
+Route::get('show/class/{id}',[\App\Http\Controllers\admin\ClassController::class, 'show'])->name('show.class');
 
 
 // ___STUDENTS CRUD PROJECT BY RESOURCE CONTROLLER___
