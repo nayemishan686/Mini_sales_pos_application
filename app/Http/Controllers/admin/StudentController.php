@@ -72,7 +72,8 @@ class StudentController extends Controller
      */
     public function show($id)
     {
-        //
+        $sData = DB::table('students')->where('id',$id)->first();
+        return response()->json($sData);
     }
 
     /**
@@ -83,7 +84,9 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $class = DB::table('class')->get();
+        $student = DB::table('students')->where('id',$id)->first();
+        return view('admin.students.edit',compact('class','student'));
     }
 
     /**
@@ -95,7 +98,23 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required|min:4',
+            'roll' => 'required',
+            'className' => 'required',
+            'phone' => 'required|min:11',
+            'mail' => 'required',
+        ]);
+        
+        $sdata = [
+            'name' => $request->name,
+            'roll' => $request->roll,
+            'Class_id' => $request->className,
+            'email' => $request->mail,
+            'phone' => $request->phone, 
+        ];
+        DB::table('students')->where('id',$id)->update($sdata);
+        return redirect()->route('students.index')->with('success', 'Data updated succefully');
     }
 
     /**

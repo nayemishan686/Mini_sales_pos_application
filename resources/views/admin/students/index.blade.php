@@ -35,7 +35,8 @@
                                         <td>{{ $sData->phone }}</td>
                                         <td>{{ $sData->email }}</td>
                                         <td>
-                                            <a href="" class="btn btn-success">Edit</a>
+                                            <a href="{{route('students.show',$sData->id)}}" class="btn btn-success">View</a>
+                                            <a href="{{route('students.edit',$sData->id)}}" class="btn btn-success">Edit</a>
                                             {{-- <a href="{{route('delete.class',$cData->id)}}" class="btn btn-danger">Delete</a> --}}
                                             <form action="{{route('students.destroy',$sData->id)}}" method="POST">
                                                 @csrf
