@@ -31,7 +31,7 @@
                                         <td>{{ ++$key }}</td>
                                         <td>{{ $sData->name }}</td>
                                         <td>{{ $sData->roll }}</td>
-                                        <td>{{ $sData->Class_id }}</td>
+                                        <td>{{ $sData->class_name }}</td>
                                         <td>{{ $sData->phone }}</td>
                                         <td>{{ $sData->email }}</td>
                                         <td>
