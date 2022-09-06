@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
-@section('content')
+@section('admin_content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -9,7 +9,7 @@
 
                 <div class="card-body">
 
-                  Hey, {{Auth::user()->name}} welcome for your come back, You are an user.
+                  Hey, {{Auth::user()->name}} welcome for your come back, You are an admin.
                   <br>
                     
                 </div>
