@@ -11,9 +11,6 @@
 
                   Hey, {{Auth::user()->name}} welcome for your come back.
                   <br>
-                  <br>
-                  <a href="{{route('index.class')}}" class="btn btn-primary">Class</a>
-                  <a href="{{route('students.index')}}" class="btn btn-dark">Students</a>
                     
                 </div>
             </div>
