@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Admin Login
+Route::get('/', [App\Http\Controllers\Auth\LoginController::class, 'adminLogin'])->name('admin.login');
 
 Route::get('/check', function () {
     echo "Hi";
