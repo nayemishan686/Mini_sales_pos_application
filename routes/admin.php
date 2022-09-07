@@ -43,6 +43,19 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'middleware' => 'is_a
         Route::get('/edit/{id}', 'CustomerController@edit');
         Route::post('/update', 'CustomerController@update')->name('customer.update');
     });
+    
+    // Product CRUD
+    Route::group(['prefix' => 'product'], function () {
+        Route::get('/', 'ProductController@index')->name('product.index');
+        Route::get('/create', 'ProductController@create')->name('product.create');
+        Route::post('/store', 'ProductController@store')->name('product.store');
+        Route::delete('/destroy/{id}', 'ProductController@destroy')->name('product.delete');
+        Route::get('/edit/{id}', 'ProductController@edit')->name('product.edit');
+        Route::post('/update/{id}', 'ProductController@update')->name('product.update');
+        // active & deactive status
+        Route::get('/deactive_status/{id}', 'ProductController@status_deactive');
+        Route::get('/active_status/{id}', 'ProductController@status_active');
+    });
 });
 
 

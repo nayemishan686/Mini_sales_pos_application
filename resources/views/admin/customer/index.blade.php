@@ -76,15 +76,18 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="customer_name">Customer Name</label>
-                                <input type="text" class="form-control" name="customer_name" id="customer_name" placeholder="Enter Customer name" required>
-                            </div>                        
+                                <input type="text" class="form-control" name="customer_name" id="customer_name"
+                                    placeholder="Enter Customer name" required>
+                            </div>
                             <div class="form-group">
                                 <label for="phone">Customer Phone</label>
-                                <input type="tel" class="form-control" name="phone" id="phone" placeholder="Enter Customer Phone No" required>
+                                <input type="tel" class="form-control" name="phone" id="phone"
+                                    placeholder="Enter Customer Phone No" required>
                             </div>
                             <div class="form-group">
                                 <label for="email">Customer E-mail</label>
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Enter Customer E-mail">
+                                <input type="email" class="form-control" name="email" id="email"
+                                    placeholder="Enter Customer E-mail">
                             </div>
                             <div class="form-group">
                                 <label for="address">Customer Address</label>
@@ -119,16 +122,14 @@
                 </div>
             </div>
         </div>
-
-
-
-
-        <!-- Category Index AJAX -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        @push('scripts')
+        <!-- Category Index AJAX -->
         <script type="text/javascript">
-        // Coupon table index
+            // Coupon table index
             $(function coupon() {
-                 table = $('.ytable').DataTable({
+                table = $('.ytable').DataTable({
                     processing: true,
                     serverSide: true,
                     ajax: "{{ route('customer.index') }}",
@@ -163,22 +164,22 @@
             })
 
             //Customer add with ajax
-            $('#add_form').submit(function(e){
-                    e.preventDefault();
-                    var url = $(this).attr('action');
-                    var request = $(this).serialize();
-                    $.ajax({
-                        url: url,
-                        type: 'post',
-                        data: request,
-                        success:function(data){
-                            toastr.success(data);
-                            $("#addModal").modal('hide');
-                            $('#add_form')[0].reset();
-                            table.ajax.reload();
-                        }
-                    });
-                }); 
+            $('#add_form').submit(function(e) {
+                e.preventDefault();
+                var url = $(this).attr('action');
+                var request = $(this).serialize();
+                $.ajax({
+                    url: url,
+                    type: 'post',
+                    data: request,
+                    success: function(data) {
+                        toastr.success(data);
+                        $("#addModal").modal('hide');
+                        $('#add_form')[0].reset();
+                        table.ajax.reload();
+                    }
+                });
+            });
 
             // Edit Coupon
             $('body').on('click', '.edit', function(data) {
@@ -202,7 +203,7 @@
                 $(document).on("click", "#delete", function(e) {
                     e.preventDefault();
                     var url = $(this).attr("href");
-                    $("#deleted_form").attr('action',url);
+                    $("#deleted_form").attr('action', url);
                     swal({
                             title: "Are you Want to delete?",
                             text: "Once Delete, This will be Permanently Delete!",
@@ -220,7 +221,7 @@
                 });
 
                 // Data passed through here
-                $('#deleted_form').submit(function(e){
+                $('#deleted_form').submit(function(e) {
                     e.preventDefault();
                     var url = $(this).attr('action');
                     var request = $(this).serialize();
@@ -228,7 +229,7 @@
                         url: url,
                         type: 'post',
                         data: request,
-                        success:function(data){
+                        success: function(data) {
                             toastr.success(data);
                             $('#deleted_form')[0].reset();
                             table.ajax.reload();
@@ -237,4 +238,8 @@
                 });
             });
         </script>
+    @endpush
+    
     @endsection
+
+    

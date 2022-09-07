@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="{{ asset('public/admin') }}/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
     <!-- summernote -->
     <link rel="stylesheet" href="{{ asset('public/admin') }}/plugins/summernote/summernote-bs4.min.css">
+    @stack('css')
 
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('public/admin') }}/dist/css/adminlte.min.css">
@@ -100,6 +101,7 @@
     <script src="{{ asset('public/admin') }}/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
     <!-- Summernote -->
     <script src="{{ asset('public/admin') }}/plugins/summernote/summernote-bs4.min.js"></script>
+    
 
 
 
@@ -196,7 +198,7 @@
         @endif
     </script>
     <!-- sweetalert msg end -->
-
+    @stack('scripts')
 
 </body>
 
