@@ -21,10 +21,20 @@ Route::get('/check', function () {
     echo "Hi";
 });
 
-//Admin Home
-Route::get('/admin/home', [App\Http\Controllers\HomeController::class,'adminHome'])->name('admin.home')->middleware('is_admin');
+// Route::get('/admin/home', [App\Http\Controllers\Admin\AdminController::class,'adminHome'])->name('admin.home')->middleware('is_admin');
 
+// Group Route
+Route::group(['namespace' => 'App\Http\Controllers\Admin', 'middleware' => 'is_admin'], function () {
 
+    //Admin Home
+    Route::get('/amarbazar', 'AdminController@adminHome')->name('admin.home');
+    // Admin Logout
+    Route::get('/admin/logout', 'AdminController@logout')->name('admin.logout');
+    // Admin Password Change
+    Route::get('/admin/password/change', 'AdminController@adminPassword')->name('admin.password.change');
+    // Admin Password Update
+    Route::post('/admin/password/update', 'AdminController@passwordUpdate')->name('admin.password.update');
+});
 
 
 

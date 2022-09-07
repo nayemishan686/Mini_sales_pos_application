@@ -7,8 +7,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 
-class LoginController extends Controller
-{
+class LoginController extends Controller {
     /*
     |--------------------------------------------------------------------------
     | Login Controller
@@ -18,7 +17,7 @@ class LoginController extends Controller
     | redirecting them to your home screen. The controller uses a trait
     | to conveniently provide its functionality to your applications.
     |
-    */
+     */
 
     use AuthenticatesUsers;
 
@@ -34,31 +33,31 @@ class LoginController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
+    public function __construct() {
         $this->middleware('guest')->except('logout');
     }
 
     // Custom login method
-    public function login(Request $request)
-    {
+    public function login(Request $request) {
         $validated = $request->validate([
-            'email' => 'required|email',
+            'email'    => 'required|email',
             'password' => 'required',
         ]);
-        if(auth()->attempt(array('email' => $request->email, 'password' => $request->password))){
-            if(auth()->user()->is_admin == 1){
-                return redirect()->route('admin.home');
-            }else{
-                return redirect()->route('home');
+        if (auth()->attempt(['email' => $request->email, 'password' => $request->password])) {
+            if (auth()->user()->is_admin == 1) {
+                $notification = ['messege' => 'You are Loggin as an admin!', 'alert-type' => 'success'];
+                return redirect()->route('admin.home')->with($notification);
+            } else {
+                $notification = ['messege' => 'You are Loggin as an user!', 'alert-type' => 'success'];
+                return redirect()->route('home')->with($notification);
             }
-        }else{
+        } else {
             return redirect()->back()->with('error', 'Password Or Email Not Matched');
         }
     }
 
     //admin login form
-    public function adminLogin(){
+    public function adminLogin() {
         return view('auth.adminLogin');
     }
 }
