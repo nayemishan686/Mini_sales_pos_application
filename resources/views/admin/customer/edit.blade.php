@@ -1,5 +1,7 @@
 <form action="{{ route('customer.update') }}" method="POST" id="edit_form">
     @csrf
+    <form id="add_form">
+        {{ csrf_field() }}
     <div class="modal-body">
         <div class="form-group">
             <label for="customer_name">Customer Name</label>

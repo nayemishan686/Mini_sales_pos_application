@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\admin\StudentController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,6 +20,8 @@ use Illuminate\Support\Facades\Auth;
 // });
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('my-form', [HomeController::class, 'myform']);
+Route::post('my-form', [HomeController::class, 'myformPost'])->name('my.form');
 
 
 
