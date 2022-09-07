@@ -34,6 +34,15 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'middleware' => 'is_a
     Route::get('/admin/password/change', 'AdminController@adminPassword')->name('admin.password.change');
     // Admin Password Update
     Route::post('/admin/password/update', 'AdminController@passwordUpdate')->name('admin.password.update');
+
+    // Customer CRUD
+    Route::group(['prefix' => 'customer'], function () {
+        Route::get('/', 'CustomerController@index')->name('customer.index');
+        Route::post('/store', 'CustomerController@store')->name('customer.store');
+        Route::delete('/destroy/{id}', 'CustomerController@destroy')->name('customer.delete');
+        Route::get('/edit/{id}', 'CustomerController@edit');
+        Route::post('/update', 'CustomerController@update')->name('customer.update');
+    });
 });
 
 
